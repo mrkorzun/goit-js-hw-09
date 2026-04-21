@@ -1,5 +1,4 @@
-/* // Додатковий імпорт стилів
-@import url("simplelightbox/dist/simple-lightbox.min.css"); */
+@import 'simplelightbox/dist/simple-lightbox.min.css';
 
 img {
   display: block;

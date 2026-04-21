@@ -1,24 +1,14 @@
-:root {
-  --font-family: 'Mulish', sans-serif;
-  --second-family: 'Sora', sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: var(--font-family);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  background-color: var(--color-white);
-  color: var(--color-scheme-2-text);
+  color: #2e2f42;
 }
 
 h2 {
-  font-family: var(--second-family);
-  color: var(--color-scheme-1-text);
+  font-family: 'Montserrat', sans-serif;
+  color: #2e2f42;
   line-height: 1.2;
   font-size: 36px;
   font-weight: 400;
@@ -30,5 +20,5 @@ h2 {
   justify-content: space-between;
 
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 11px;
 }
