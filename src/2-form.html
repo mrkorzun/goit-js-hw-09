@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GOit-js-hw-09</title>
+    <title>Task: Form</title>
     <!-- modern normalize -->
     <link
       rel="stylesheet"
@@ -21,7 +20,6 @@
       href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
-    <!-- External css -->
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- External js -->
     <script type="module" src="./main.js"></script>
@@ -29,15 +27,28 @@
   <body>
     <header>
       <div class="container">
-        <ul class="nav-bar">
-          <li class="nav-item">
-            <a href="./1-gallery.html" class="nav-item-link">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a href="./2-form.html" class="nav-item-link">Form</a>
-          </li>
-        </ul>
+        <nav class="nav">
+          <ul class="nav-bar">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-item-link">Back</a>
+            </li>
+            <li class="nav-item">
+              <a href="./1-gallery.html" class="nav-item-link">Gallery</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
+    <form class="feedback-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
