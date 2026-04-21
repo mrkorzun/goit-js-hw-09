@@ -1,0 +1,1 @@
+{"version":3,"file":"form-CIlMuDFu.js","sources":["../../src/js/form.js"],"sourcesContent":["const refs = {\n  form: document.querySelector('.feedback-form'),\n};\n\nconsole.log(refs);\n\nconsole.log;\n"],"names":["refs"],"mappings":"AAAA,MAAMA,EAAO,CACX,KAAM,SAAS,cAAc,gBAAgB,CAC/C,EAEA,QAAQ,IAAIA,CAAI"}
