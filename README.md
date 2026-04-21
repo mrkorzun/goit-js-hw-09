@@ -1,109 +1,98 @@
-# Vanilla App Template
+# Домашнє завдання №9: <br> Vite, SimpleLightbox та Web Storage
 
-This project was created using Vite. To get started and configure
-additional features, [refer to the documentation](https://vitejs.dev/).
+Вітаю! Цей репозиторій містить виконання дев'ятого модуля курсу JavaScript.<br>
+Основна увага в цій роботі приділена знайомству з інструментами збірки (Vite),
+роботі з пакетами через npm та управлінню локальним сховищем (LocalStorage).
 
-## Creating a repository from a template
+---
 
-Use this organization repository as a template to create
-your project repository. To do this, click the `«Use this template»` button and
-select the `«Create a new repository»` option, as shown in the image.
+## 🛠 Технологічний стек
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+- **Збірка проєкту:** [Vite](https://vitejs.dev/) — швидкий інструмент для
+  сучасної фронтенд-розробки.
+- **Бібліотеки:** `SimpleLightbox` — для реалізації функціональної галереї.
+- **Інструменти:** npm, ECMAScript Modules (ESM), LocalStorage.
+- **Форматування:** Prettier та EditorConfig.
 
-In the next step, the page for creating a new repository will open. Fill in
-the name field, make sure the repository is public, and then click the
-`«Create repository from template»` button.
+---
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## 📂 Структура проєкту
 
-After the repository is created, you need to go to the settings
-of the created repository to the `Settings` > `Actions` > `General` tab as shown
-in the image.
+Проєкт організований згідно з вимогами модульності та структурою Vite:
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
-
-Scroll to the bottom of the page, and in the `«Workflow permissions»` section, select
-the `«Read and write permissions»` option and check the checkbox. This is necessary
-to automate the project deployment process.
-
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
-
-Now you have a personal project repository with the file and folder structure
-of the template repository. From here, work with it like any other personal
-repository: clone it to your computer, write code, make commits, and push
-them to GitHub.
-
-## Getting Started
-
-1. Make sure the LTS version of Node.js is installed on your computer.
-   [Download and install](https://nodejs.org/en/) it if necessary.
-2. Install the project's base dependencies in the terminal using the command `npm install`.
-3. Start the development mode by running the command `npm run dev` in the terminal.
-4. Go to [http://localhost:5173](http://localhost:5173) in your browser. This page will automatically reload after saving changes to the project files.
-
-## Files and Folders
-
-- Page component markup files should be located in the `src/partials` folder and
-  imported into the `index.html` file. For example, a file with header markup
-  `header.html` is created in the `partials` folder and imported into `index.html`.
-- Style files should be located in the `src/css` folder and imported into the HTML files
-  of the pages. For example, for `index.html`, the style file is called `index.css`.
-- Add images to the `src/img` folder. The builder optimizes them, but only during
-  the deployment of the production version of the project. This all happens in the cloud
-  so as not to overload your computer, as this can take a long time on weaker machines.
-
-## Deployment
-
-The production version of the project will be automatically built and deployed to GitHub
-Pages, in the `gh-pages` branch, every time the `main` branch is updated. For example,
-after a direct push or an accepted pull request. To do this, you need to change the
-value of the `--base=/<REPO>/` flag for the `build` command in the `package.json` file,
-replacing `<REPO>` with the name of your repository, and push the changes to GitHub.
-
-```json
-"build": "vite build --base=/<REPO>/",
+```text
+goit-js-hw-09/
+├── src/
+│   ├── css/            # Стилі проєкту
+│   ├── img/            # Зображення та ресурси
+│   ├── js/             # Скрипти з логікою завдань
+│   │   ├── 1-gallery.js
+│   │   └── 2-form.js
+│   ├── public/         # Статичні ресурси
+│   ├── 1-gallery.html  # Розмітка завдання №1
+│   ├── 2-form.html     # Розмітка завдання №2
+│   └── index.html      # Головна сторінка (меню)
+├── .editorconfig       # Налаштування редактора
+├── .gitignore          # Список ігнорованих файлів Git
+├── .prettierrc.json    # Конфігурація Prettier
+├── package.json        # Файл залежностей npm
+├── README.md           # Документація проєкту
+└── vite.config.js      # Конфігурація збірки Vite
 ```
 
-Next, you need to go to the GitHub repository settings (`Settings` > `Pages`) and
-set the distribution of the production version of files from the `/root` folder of the `gh-pages` branch, if this was not done automatically.
+---
 
-![GitHub Pages settings](./assets/repo-settings.png)
+## 📝 Опис виконаних завдань
 
-### Status deployment
+### Завдання 1 — Галерея зображень
 
-The deployment status of the latest commit is displayed by an icon next to its ID.
+Реалізовано рефакторинг галереї з використанням бібліотеки **SimpleLightbox**:
 
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, building, or deployment.
+- **npm інсталяція:** Бібліотека додана до проєкту як npm-залежність.
+- **Автоматизація:** Логіка модальних вікон та перемикання зображень повністю
+  забезпечується бібліотекою без ручного делегування.
+- **Налаштування:** Додано відображення підписів (`alt`) через 250 мс після
+  відкриття модального вікна.
 
-More detailed information about the status can be viewed by clicking on the icon and, in
-the dropdown window, following the `Details` link.
+### Завдання 2 — Форма зворотного зв'язку
 
-![Deployment status](./assets/deploy-status.png)
+Реалізовано систему збереження чернетки повідомлення:
 
-### Live Page
+- **LocalStorage:** Використано подію `input` для динамічного збереження значень
+  полів у сховище під ключем `"feedback-form-state"`.
+- **Відновлення даних:** При завантаженні сторінки дані автоматично підтягуються
+  зі сховища у відповідні поля.
+- **Валідація:** При сабміті перевіряється заповненість усіх полів. Після
+  успішної відправки дані виводяться в консоль, а сховище та форма очищуються.
 
-After some time, usually a few minutes, the live page can be viewed at the
-address specified in the `Settings` > `Pages` tab in the repository settings.
-For example, here is the link to the live version for this repository:
+---
 
-[https://mrkorzun.github.io/vanilla-app-template/](https://mrkorzun.github.io/vanilla-app-template/).
+## 🚀 Як запустити проєкт локально
 
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the project's CSS and JS files (**404**).
-Most likely, you have an incorrect value for the `--base` flag for the
-`build` command in the `package.json` file.
+1. **Клонуйте репозиторій:**
+   ```bash
+   git clone https://github.com/mrkorzun/goit-js-hw-09.git
+   ```
+2. **Встановіть залежності:**
 
-## How it works
+   ```bash
+    npm install
+   ```
 
-![How it works](./assets/how-it-works.png)
+3. **Запустіть сервер розробки:**
+   ```bash
+    npm run dev
+   ```
 
-1. After each push to the `main` branch of the GitHub repository, a
-   special script (GitHub Action) from the `.github/workflows/deploy.yml` file is launched.
-2. All repository files are copied to the server, where the project is initialized and
-   undergoes linting and building before deployment.
-3. If all steps are successful, the built production version of the project files
-   is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+---
+
+## 🔗 Посилання
+
+- [Вихідний код на GitHub](https://github.com/mrkorzun/goit-js-hw-09)
+- [Жива сторінка (GitHub Pages)](hhttps://mrkorzun.github.io/goit-js-hw-09/)
+- [Cтилізація розмітки](https://www.figma.com/file/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?type=design&node-id=3-969&mode=design)
+
+---
+
+> **Примітка:** Проєкт відповідає вимогам макета, код відформатований
+> **Prettier** та не містить помилок у консолі.
