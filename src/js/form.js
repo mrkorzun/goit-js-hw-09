@@ -1,7 +1,16 @@
 const refs = {
   form: document.querySelector('.feedback-form'),
+  btn: document.querySelector('.btn'),
 };
-
 console.log(refs);
 
-console.log;
+const formData = {
+  email: '',
+  message: '',
+};
+
+function onFormFieldChange({ target: formFieldEl }) {
+  console.log(formFieldEl);
+}
+
+refs.form.addEventListener('input', onFormFieldChange);
