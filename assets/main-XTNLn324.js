@@ -8,4 +8,4 @@ import"./vendor-Dy2q2e6o.js";(function(){const o=document.createElement("link").
             />
         </a>
     </li>`).join("");c.galleryList.innerHTML=n;function l(i){if(i.preventDefault(),i.target.nodeName!=="IMG")return;const o=i.target.dataset.source,a=i.target.alt;basicLightbox.create(`<img src="${o}" alt="${a}"/>`).show()}c.galleryList.addEventListener("click",l);
-//# sourceMappingURL=main-L2exX76Q.js.map
+//# sourceMappingURL=main-XTNLn324.js.map

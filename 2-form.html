@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" />
     <title>Task: Form</title>
     <!-- modern normalize -->
     <link
@@ -17,40 +18,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Sora:wght@100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- External css -->
     <!-- External js -->
     <script type="module" crossorigin src="/goit-js-hw-09/assets/vendor-Dy2q2e6o.js"></script>
-    <script type="module" crossorigin src="/goit-js-hw-09/assets/main-L2exX76Q.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/main-D884-oY1.css">
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/main-XTNLn324.js"></script>
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/main-CbR9LXZa.css">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/vendor-DkczhqSJ.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav class="nav">
-          <ul class="nav-bar">
-            <li class="nav-item">
-              <a href="./index.html" class="nav-item-link">Back</a>
-            </li>
-            <li class="nav-item">
-              <a href="./1-gallery.html" class="nav-item-link">Gallery</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <form class="feedback-form" autocomplete="off">
-      <label>
-        Email
-        <input type="email" name="email" autofocus />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="8"></textarea>
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="form container">
+      <form class="feedback-form" autocomplete="off">
+        <label>
+          Email
+          <input class="email-input" type="email" name="email" autofocus />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="8"></textarea>
+        </label>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
