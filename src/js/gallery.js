@@ -81,7 +81,7 @@ const images = [
 const refs = {
   galleryList: document.querySelector('.gallery'),
 };
-console.log(refs);
+// console.log(refs);
 
 const markup = images
   .map(
