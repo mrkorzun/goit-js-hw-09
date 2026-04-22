@@ -102,17 +102,4 @@ const markup = images
 // console.log(markup);
 refs.galleryList.innerHTML = markup;
 
-function onGalleryListClick(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-
-  const src = event.target.dataset.source;
-  const alt = event.target.alt;
-
-  const instance = basicLightbox.create(`<img src="${src}" alt="${alt}"/>`);
-  instance.show();
-}
-
-refs.galleryList.addEventListener('click', onGalleryListClick);
+new SimpleLightbox('.gallery-link')
