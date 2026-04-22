@@ -28,8 +28,8 @@ function fieldForm() {
   // считать данные LS
   try {
     const formDataLS = JSON.parse(localStorage.getItem('feedback-form-state'));
-    // проверить есть ли данные в LS 
-    if(formDataLS === null) {
+    // проверить есть ли данные в LS
+    if (formDataLS === null) {
       return;
     }
     // делаю этот обьект не пустым если даныне уже были записаны до LS
@@ -43,8 +43,7 @@ function fieldForm() {
   } catch (error) {
     console.log(error);
   }
-  
-};
+}
 
 // шаг 3: проверка на то что все поля заполнены и чистка формы и LS после submit
 function onFormSubmit(event) {
@@ -52,12 +51,13 @@ function onFormSubmit(event) {
   // собираем масыв всего что юзер ввёл
   const formDataValues = Object.values(formData);
   // проверка на пустые строчки
-  const emptyFieldName = Object.keys(formData).find(key => !formData[key].trim());
-  if(formDataValues.includes('')) {
-    console.log(`Пусте полe для введення - ${emptyFieldName}`);
+  if (formDataValues.includes('')) {
+    alert('Fill please all fields');
     return;
   }
-  // чистим LS 
+  // выводим обьект к консоли
+  console.log(formData);
+  // чистим LS
   localStorage.removeItem('feedback-form-state');
   // чистим форму
   refs.form.reset();
