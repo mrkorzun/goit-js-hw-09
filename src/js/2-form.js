@@ -55,6 +55,11 @@ function onFormSubmit(event) {
     alert('Fill please all fields');
     return;
   }
+  // выводим обьект к консоли
+  console.log(formData);
+  // динамический сброс всех ключей обьекта
+  Object.keys(formData).forEach(key => (formData[key] = ''));
+  console.log(formData);
   // чистим LS
   localStorage.removeItem('feedback-form-state');
   // чистим форму
