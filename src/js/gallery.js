@@ -72,7 +72,6 @@ const images = [
     <img
       class="gallery-image"
       src="small-image.jpg"
-      data-source="large-image.jpg"
       alt="Image description"
     />
   </a>
@@ -91,7 +90,6 @@ const markup = images
             <img
             class="gallery-image"
             src="${preview}"
-            data-source="${original}"
             alt="${description}"
             />
         </a>
@@ -102,4 +100,4 @@ const markup = images
 // console.log(markup);
 refs.galleryList.innerHTML = markup;
 
-new SimpleLightbox('.gallery-link')
+new SimpleLightbox('.gallery-link', {captionsData: 'alt', captionDelay: 250})
