@@ -19,7 +19,7 @@ label {
 
 input {
   margin-top: 8px;
-  padding-left: 16px;
+  padding: 10px 10px 13px 10px;
 
   height: 40px;
 
@@ -30,7 +30,7 @@ input {
 textarea {
   margin-top: 8px;
   margin-bottom: 16px;
-  padding: 10px 16px;
+  padding: 10px;
 
   resize: none;
   /* overflow: hidden; */
@@ -38,6 +38,12 @@ textarea {
   height: 80px;
   border-radius: 4px;
   border: 1px solid #808080;
+}
+
+input::placeholder, 
+textarea::placeholder {
+  font-size: 12px;
+  color: #ccc; /* можна також підправити колір, якщо він занадто яскравий */
 }
 
 .btn {
