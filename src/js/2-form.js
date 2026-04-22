@@ -61,6 +61,8 @@ function onFormSubmit(event) {
   localStorage.removeItem('feedback-form-state');
   // чистим форму
   refs.form.reset();
+  // динамический сброс всех ключей обьекта
+  Object.keys(formData).forEach(key => (formData[key] = ''));
 }
 
 refs.form.addEventListener('input', onFormFieldChange);
